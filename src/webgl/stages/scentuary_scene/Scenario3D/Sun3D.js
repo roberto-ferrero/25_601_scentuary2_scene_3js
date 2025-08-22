@@ -13,8 +13,8 @@ class Sun3D{
         this.itemId = "sun3D"
         //-----------------------------
         this.mesh = this.stage.get_mesh_from_GLB_PROJECT(this.itemId)
-        this.texture = this.stage.loader.get_texture("stairs")
-        this.texture.flipY = false;
+        // this.texture = this.stage.loader.get_texture("stairs")
+        // this.texture.flipY = false;
         const marbleMaterial = new THREE.MeshBasicMaterial({
             // map: this.texture, // Use the loaded texture
             color: 0xffffff, // Ivory base color

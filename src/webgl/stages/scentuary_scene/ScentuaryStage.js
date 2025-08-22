@@ -77,61 +77,82 @@ class ScentuaryStage extends StageSuper{
         const textureRes_4k = "4k/"
         const aoRes_4k = "4k/"
 
-        // this.loader.add_texture("pilars", this.app.loader_pathPrefix+"img/bakings/pilars_4k.jpg", true)
-        this.loader.add_texture("pilar1", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar1.jpg", true)
-        this.loader.add_texture("pilar1_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar1_ao.jpg", true)
-        this.loader.add_texture("pilar1_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar1_bump.jpg", true)
+        this.loader.add_texture("archwall", this.app.loader_pathPrefix+"img/bakings/2k/archwall.jpg", true)
+        this.loader.add_texture("archwall_ao", this.app.loader_pathPrefix+"img/bakings/2k/archwall_ao.jpg", true)
+        this.loader.add_texture("archwall_bump", this.app.loader_pathPrefix+"img/bakings/2k/archwall_bump.jpg", true)
+        
+        this.loader.add_texture("floor", this.app.loader_pathPrefix+"img/bakings/2k/floor.jpg", true)
+        this.loader.add_texture("floor_ao", this.app.loader_pathPrefix+"img/bakings/2k/floor_ao.jpg", true)
+        this.loader.add_texture("floor_bump", this.app.loader_pathPrefix+"img/bakings/2k/floor_bump.jpg", true)
+        
+        this.loader.add_texture("pools", this.app.loader_pathPrefix+"img/bakings/1k/pools.jpg", true)
+        this.loader.add_texture("pools_ao", this.app.loader_pathPrefix+"img/bakings/1k/pools_ao.jpg", true)
+        this.loader.add_texture("pools_bump", this.app.loader_pathPrefix+"img/bakings/1k/pools_bump.jpg", true)
+        
+        this.loader.add_texture("walls", this.app.loader_pathPrefix+"img/bakings/1k/walls.jpg", true) 
+        this.loader.add_texture("walls_ao", this.app.loader_pathPrefix+"img/bakings/1k/walls_ao.jpg", true)
+        this.loader.add_texture("walls_bump", this.app.loader_pathPrefix+"img/bakings/1k/walls_bump.jpg", true)
 
-        this.loader.add_texture("pilar2", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar2.jpg", true)
-        this.loader.add_texture("pilar2_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar2_ao.jpg", true)
-        this.loader.add_texture("pilar2_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar2_bump.jpg", true)
+        this.loader.add_texture("benchTop", this.app.loader_pathPrefix+"img/bakings/2k/benchTop.jpg", true)
+        this.loader.add_texture("benchTop_ao", this.app.loader_pathPrefix+"img/bakings/2k/benchTop_ao.jpg", true)
+        this.loader.add_texture("benchTop_bump", this.app.loader_pathPrefix+"img/bakings/2k/benchTop_bump.jpg", true)
+        this.loader.add_texture("benchBase", this.app.loader_pathPrefix+"img/bakings/2k/benchBase.jpg", true)
+        this.loader.add_texture("benchBase_ao", this.app.loader_pathPrefix+"img/bakings/2k/benchBase_ao.jpg", true)
+        this.loader.add_texture("benchBase_bump", this.app.loader_pathPrefix+"img/bakings/2k/benchBase_bump.jpg", true)
 
-        this.loader.add_texture("pilar3", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar3.jpg", true)
-        this.loader.add_texture("pilar3_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar3_ao.jpg", true)
-        this.loader.add_texture("pilar3_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar3_bump.jpg", true)
-
-        this.loader.add_texture("pilar4", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar4.jpg", true)
-        this.loader.add_texture("pilar4_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar4_ao.jpg", true)
-        this.loader.add_texture("pilar4_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar4_bump.jpg", true)
-
-        this.loader.add_texture("pilar5", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar5.jpg", true)
-        this.loader.add_texture("pilar5_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar5_ao.jpg", true)
-        this.loader.add_texture("pilar5_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar5_bump.jpg", true)
-
-        this.loader.add_texture("pilar6", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar6.jpg", true)
-        this.loader.add_texture("pilar6_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar6_ao.jpg", true)
-        this.loader.add_texture("pilar6_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar6_bump.jpg", true)
-
-        this.loader.add_texture("pilar7", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar7.jpg", true)
-        this.loader.add_texture("pilar7_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar7_ao.jpg", true)
-        this.loader.add_texture("pilar7_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar7_bump.jpg", true)
-
-        this.loader.add_texture("pilar8", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar8.jpg", true)
-        this.loader.add_texture("pilar8_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar8_ao.jpg", true)
-        this.loader.add_texture("pilar8_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar8_bump.jpg", true)
+        // this.loader.add_texture("arc", this.app.loader_pathPrefix+"img/bakings/4k/arc.jpg", true) 
+        // this.loader.add_texture("arc_ao", this.app.loader_pathPrefix+"img/bakings/2k/arc_ao.jpg", true)
+        // this.loader.add_texture("arc_bump", this.app.loader_pathPrefix+"img/bakings/2k/arc_bump.jpg", true)
 
 
-        this.loader.add_texture("stairs", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"stairs.jpg", true)
-        this.loader.add_texture("stairs_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"stairs_ao.jpg", true)
-        this.loader.add_texture("stairs_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"stairs_bump.jpg", true)
+        // this.loader.add_texture("pilar1", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar1.jpg", true)
+        // this.loader.add_texture("pilar1_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar1_ao.jpg", true)
+        // this.loader.add_texture("pilar1_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar1_bump.jpg", true)
 
-        this.loader.add_texture("floor", this.app.loader_pathPrefix+"img/bakings/"+textureRes_4k+"floor.jpg", true)
-        this.loader.add_texture("floor_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"floor_ao.jpg", true)
-        this.loader.add_texture("floor_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_4k+"floor_bump.jpg", true)
+        // this.loader.add_texture("pilar2", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar2.jpg", true)
+        // this.loader.add_texture("pilar2_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar2_ao.jpg", true)
+        // this.loader.add_texture("pilar2_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar2_bump.jpg", true)
 
-        // this.loader.add_texture("floor_shadow", this.app.loader_pathPrefix+"img/bakings/floor_shadow_1k.jpg", true)
-        this.loader.add_texture("walls", this.app.loader_pathPrefix+"img/bakings/"+textureRes_4k+"walls.jpg", true)
-        this.loader.add_texture("walls_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"walls_ao.jpg", true)
-        this.loader.add_texture("walls_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_4k+"walls_bump.jpg", true)
+        // this.loader.add_texture("pilar3", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar3.jpg", true)
+        // this.loader.add_texture("pilar3_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar3_ao.jpg", true)
+        // this.loader.add_texture("pilar3_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar3_bump.jpg", true)
 
-        this.loader.add_texture("goldenframe", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"goldenframe.jpg", true)
-        this.loader.add_texture("goldenframe", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"goldenframe_ao.jpg", true)
+        // this.loader.add_texture("pilar4", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar4.jpg", true)
+        // this.loader.add_texture("pilar4_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar4_ao.jpg", true)
+        // this.loader.add_texture("pilar4_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar4_bump.jpg", true)
 
-        this.loader.add_texture("poolwalls", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"poolwalls.jpg", true)
-        this.loader.add_texture("poolwalls_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"poolwalls_ao.jpg", true)
-        this.loader.add_texture("poolwalls_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"poolwalls_bump.jpg", true)
+        // this.loader.add_texture("pilar5", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar5.jpg", true)
+        // this.loader.add_texture("pilar5_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar5_ao.jpg", true)
+        // this.loader.add_texture("pilar5_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar5_bump.jpg", true)
 
-        this.loader.add_texture("spiral_sparkle", this.app.loader_pathPrefix+"img/sparkle.png", true)
+        // this.loader.add_texture("pilar6", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar6.jpg", true)
+        // this.loader.add_texture("pilar6_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar6_ao.jpg", true)
+        // this.loader.add_texture("pilar6_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar6_bump.jpg", true)
+
+        // this.loader.add_texture("pilar7", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar7.jpg", true)
+        // this.loader.add_texture("pilar7_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar7_ao.jpg", true)
+        // this.loader.add_texture("pilar7_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar7_bump.jpg", true)
+
+        // this.loader.add_texture("pilar8", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar8.jpg", true)
+        // this.loader.add_texture("pilar8_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar8_ao.jpg", true)
+        // this.loader.add_texture("pilar8_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar8_bump.jpg", true)
+
+
+        // this.loader.add_texture("stairs", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"stairs.jpg", true)
+        // this.loader.add_texture("stairs_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"stairs_ao.jpg", true)
+        // this.loader.add_texture("stairs_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"stairs_bump.jpg", true)
+
+        
+
+
+        // this.loader.add_texture("goldenframe", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"goldenframe.jpg", true)
+        // this.loader.add_texture("goldenframe", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"goldenframe_ao.jpg", true)
+
+        // this.loader.add_texture("poolwalls", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"poolwalls.jpg", true)
+        // this.loader.add_texture("poolwalls_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"poolwalls_ao.jpg", true)
+        // this.loader.add_texture("poolwalls_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"poolwalls_bump.jpg", true)
+
+        // this.loader.add_texture("spiral_sparkle", this.app.loader_pathPrefix+"img/sparkle.png", true)                       
 
 
 
@@ -294,7 +315,7 @@ class ScentuaryStage extends StageSuper{
     //     return mesh
     // }
     get_mesh_from_GLB_PROJECT(meshId, PROJECT = this.GLB_PROJECT){
-        // console.log("_extract_mesh_from_GLB_PROJECT: ", meshId);
+        console.log("_extract_mesh_from_GLB_PROJECT: ", meshId);
         const mesh = PROJECT.children.find((mesh)=>{
             const result = mesh.name == meshId
             return result

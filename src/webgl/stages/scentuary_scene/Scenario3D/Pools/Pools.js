@@ -5,7 +5,7 @@ import { Water } from 'three/examples/jsm/objects/Water2.js'
 
 class Pools{
     constructor (obj){
-        // console.log("(Pools.CONSTRUCTORA): ", obj)
+        console.log("(Pools.CONSTRUCTORA): ", obj)
         this.app = obj.app
         this.project = obj.project
         this.stage = obj.stage
@@ -15,35 +15,7 @@ class Pools{
         this.parent3D = obj.parent3D
         //-----------------------------
 
-        //-----------------------------
-        this.itemId = "poolwalls"
-        this.mesh = this.stage.get_mesh_from_GLB_PROJECT(this.itemId)
-        this.texture = this.stage.loader.get_texture("poolwalls")
-        this.texture.flipY = false;
-        //--
-        this.texture_ao = this.stage.loader.get_texture("poolwalls_ao")
-        this.texture_ao.flipY = false;
-        this.texture_bump = this.stage.loader.get_texture("poolwalls_bump")
-        this.texture_bump.flipY = false;
-        //--
-        const marbleMaterial = new THREE.MeshStandardMaterial({
-            map: this.texture, // Use the loaded texture
-            color: this.scenario.BESE_MARBEL_COLOR, // Ivory base color
-            // color: 0xff0000, // Ivory base color
-            aoMap: this.texture_ao,
-            aoMapIntensity: 1,
-            roughness: 0.4,   // Moderate roughness for a soft shine
-            metalness: 0.0,   // Non-metallic
-            bumpMap: this.texture_bump,
-            bumpScale: 3, // Adjust the bump scale as needed
-            lightMap: this.texture_bump,
-            lightMapIntensity: 0.5,
-        });
-        this.mesh.material = marbleMaterial
-        this.mesh.castShadow = true;
-        this.mesh.receiveShadow = true;
-        // console.log("mesh",this.mesh);
-        this.parent3D.add(this.mesh)
+       
         //-----------------------------
 
         const params = {
@@ -82,13 +54,13 @@ class Pools{
             normalMap1: normalMap1,
             sunDirection: this.sunPosition,
             sunColor: 0xffffff, //this.sunColor,
-            color: 0xffe3b9,
+            color: 0xffefd8,
             distortionScale: 1.5,
             fog: this.app.scene.fog !== undefined
         })
         this.pool1_mesh.rotation.x = -Math.PI / 2
         this.pool1_mesh.rotation.z = Math.PI
-        this.pool1_mesh.position.set(-6, 0.25, -4.54)
+        this.pool1_mesh.position.set(-5, -0.20, -2.7)
         // this.mesh.rotation.z = -Math.PI / 2
         this.parent3D.add(this.pool1_mesh)
         //--
@@ -106,13 +78,13 @@ class Pools{
             normalMap1: normalMap1,
             sunDirection: this.sunPosition,
             sunColor: 0xffffff, //this.sunColor,
-            color: 0xffe3b9,
+            color: 0xffefd8, //0xffe3b9,
             distortionScale: 1.5,
             fog: this.app.scene.fog !== undefined
         })
         this.pool2_mesh.rotation.x = -Math.PI / 2
         this.pool2_mesh.rotation.z = Math.PI
-        this.pool2_mesh.position.set(-6, 0.25, 4.7)
+        this.pool2_mesh.position.set(-5, -0.20, 2.7)
         // this.mesh.rotation.z = -Math.PI / 2
         this.parent3D.add(this.pool2_mesh)
 

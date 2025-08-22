@@ -54,7 +54,7 @@ class Sea3D{
         console.log("flowDirection: ", this.mesh.material.uniforms.flowDirection);
         this.mesh.rotation.x = -Math.PI / 2
         this.mesh.rotation.z = Math.PI
-        this.mesh.position.set(19.0+30, 0.0, 0)
+        this.mesh.position.set(19.0+30.5, -0.2, 0)
         // this.mesh.rotation.z = -Math.PI / 2
         this.parent3D.add(this.mesh)
 

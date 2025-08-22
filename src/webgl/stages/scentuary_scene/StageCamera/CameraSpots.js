@@ -6,7 +6,7 @@ import MeshUtils from "../../../core/utils/MeshUtils"
 
 class CameraSpots{
     constructor (obj){
-        //console.log("(CameraSpots.CONSTRUCTORA): ", obj)
+        console.log("(CameraSpots.CONSTRUCTORA): ", obj)
         this.app = obj.app
         this.project = obj.project
         this.stage = obj.stage

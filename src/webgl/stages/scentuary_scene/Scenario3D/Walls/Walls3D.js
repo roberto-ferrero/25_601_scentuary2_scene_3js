@@ -34,50 +34,14 @@ class Walls3D{
             // emissiveIntensity: 0.2, // Soft glow
             bumpMap: this.texture_bump,
             bumpScale: 1, // Adjust the bump scale as needed
-            lightMap: this.texture_bump,
-            lightMapIntensity: 0.5,
+            // lightMap: this.texture_bump,
+            // lightMapIntensity: 0.5,
         });
         this.mesh.material = marbleMaterial
         this.mesh.castShadow = true;
         this.mesh.receiveShadow = true;
         // console.log("mesh",this.mesh);
         this.parent3D.add(this.mesh)
-        //-----------------------------
-
-        //-----------------------------
-        this.item2Id = "goldenframe"
-        this.mesh2 = this.stage.get_mesh_from_GLB_PROJECT(this.item2Id)
-        this.texture2 = this.stage.loader.get_texture("goldenframe")
-        this.texture2.flipY = false;
-        // const goldenMaterial = new THREE.MeshStandardMaterial({
-        //     map: this.texture2, // Use the loaded texture
-        //     metalness: 1.0,               // Fully metallic
-        //     roughness: 0.2,               // A bit of roughness for realism
-        //     emissive: new THREE.Color(0xaf8140), // Rich gold color (hex for gold)
-        //     emissiveIntensity: 0.5,       // Soft glow
-        //     color: new THREE.Color(0xaf8140) // Rich gold color (hex for gold)
-        //     // color: new THREE.Color(0xFFD700) // Rich gold color (hex for gold)
-        // });
-
-        const goldMaterial = new THREE.MeshPhysicalMaterial({
-            map: this.texture2, // Use the loaded texture
-            color: 0xaf8140, // gold base color
-            metalness: 1.0,
-            roughness: 0.2, // slight roughness for realism
-            clearcoat: 1.0, // gives it an extra glossy finish
-            clearcoatRoughness: 0.05,
-            reflectivity: 0.9, // high reflectivity
-            sheen: 1.0,
-            sheenColor: new THREE.Color(0xaf8140), // subtle warm sheen
-            emissive: new THREE.Color(0xaf8140), // Rich gold color (hex for gold)
-            emissiveIntensity: 0.5, // Soft glow
-        });
-
-        this.mesh2.material = goldMaterial
-        this.mesh2.castShadow = true;
-        this.mesh2.receiveShadow = true;
-        // console.log("mesh",this.mesh);
-        this.parent3D.add(this.mesh2)
         //-----------------------------
 
     }
