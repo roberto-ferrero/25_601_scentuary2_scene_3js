@@ -15,17 +15,17 @@ class Lights{
         this.scenario = obj.scenario
         this.parent3D = obj.parent3D
         //-----------------------------
-        const intensity_mod = 0
+        const intensity_mod = 0.2
         this.PRESETS = {
             cenitalA: {
                 color: 0xFDC274,
-                intensity: 90*intensity_mod,
+                intensity: 90*0,
                 distance: 100,
                 decay: 2
             },
             fillA1: {
                 color: 0xFDC274,
-                intensity: 80*intensity_mod,
+                intensity: 80*0,
                 distance: 100,
                 decay: 2
             },

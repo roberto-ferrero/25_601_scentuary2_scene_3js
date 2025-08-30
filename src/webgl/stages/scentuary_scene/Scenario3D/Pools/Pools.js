@@ -54,13 +54,13 @@ class Pools{
             normalMap1: normalMap1,
             sunDirection: this.sunPosition,
             sunColor: 0xffffff, //this.sunColor,
-            color: 0xffefd8,
+            color: 0xb5cad4,
             distortionScale: 1.5,
             fog: this.app.scene.fog !== undefined
         })
         this.pool1_mesh.rotation.x = -Math.PI / 2
         this.pool1_mesh.rotation.z = Math.PI
-        this.pool1_mesh.position.set(-5, -0.20, -2.7)
+        this.pool1_mesh.position.set(-5, -0.10, -2.7)
         // this.mesh.rotation.z = -Math.PI / 2
         this.parent3D.add(this.pool1_mesh)
         //--
@@ -78,13 +78,14 @@ class Pools{
             normalMap1: normalMap1,
             sunDirection: this.sunPosition,
             sunColor: 0xffffff, //this.sunColor,
-            color: 0xffefd8, //0xffe3b9,
+            // color: 0xffefd8, //0xffe3b9,
+            color: 0xb5cad4, //0xffe3b9,
             distortionScale: 1.5,
             fog: this.app.scene.fog !== undefined
         })
         this.pool2_mesh.rotation.x = -Math.PI / 2
         this.pool2_mesh.rotation.z = Math.PI
-        this.pool2_mesh.position.set(-5, -0.20, 2.7)
+        this.pool2_mesh.position.set(-5, -0.10, 2.7)
         // this.mesh.rotation.z = -Math.PI / 2
         this.parent3D.add(this.pool2_mesh)
 

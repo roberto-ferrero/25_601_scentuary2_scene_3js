@@ -26,20 +26,36 @@ class Pilar3D{
         this.texture_bump = this.stage.loader.get_texture(this.itemId+"_bump")
         this.texture_bump.flipY = false;
         //--
+        // const marbleMaterial = new THREE.MeshStandardMaterial({
+        //     map: this.texture, // Use the loaded texture
+        //     aoMap: this.texture_ao,
+        //     aoMapIntensity: 1,
+        //     bumpMap: this.texture_bump,
+        //     bumpScale: 1.5, // Adjust the bump scale as needed
+        //     lightMap: this.texture_bump,
+        //     lightMapIntensity: 1,
+        //     // color: this.scenario.BESE_MARBEL_COLOR, // Ivory base color
+        //     // color: new THREE.Color(0xaf8140), // Ivory base color
+        //     roughness: 0.4,   // Moderate roughness for a soft shine
+        //     metalness: 0.0,   // Non-metallic
+        //     emissive: new THREE.Color(0xaf8140), //0xbab4b1, // Ivory base color
+        //     emissiveIntensity: 0.1, // Soft glow
+        // });
         const marbleMaterial = new THREE.MeshStandardMaterial({
             map: this.texture, // Use the loaded texture
             aoMap: this.texture_ao,
-            aoMapIntensity: 1,
-            bumpMap: this.texture_bump,
-            bumpScale: 1.5, // Adjust the bump scale as needed
+            aoMapIntensity: 0.5,
             lightMap: this.texture_bump,
-            lightMapIntensity: 1,
+            lightMapIntensity: 2.5,
             // color: this.scenario.BESE_MARBEL_COLOR, // Ivory base color
-            // color: new THREE.Color(0xaf8140), // Ivory base color
-            roughness: 0.4,   // Moderate roughness for a soft shine
+            roughness: 0.45,   // Moderate roughness for a soft shine
             metalness: 0.0,   // Non-metallic
-            emissive: new THREE.Color(0xaf8140), //0xbab4b1, // Ivory base color
-            emissiveIntensity: 0.1, // Soft glow
+            
+            bumpMap: this.texture_bump,
+            bumpScale: -10, // Adjust the bump scale as needed
+            // lightMap: this.texture_bump,
+            // lightMapIntensity: 0.5,
+            // side: THREE.DoubleSide
         });
         this.mesh.material = marbleMaterial
         this.mesh.castShadow = true;
@@ -50,19 +66,19 @@ class Pilar3D{
 
         //-----------------------------
         // COIN:
-        const meshId = "coin"+this.itemId.split("pilar")[1]
-        const spotId = "pilartop"+this.itemId.split("pilar")[1]
-        this.coin = new Coin3D({
-            app: this.app,
-            project: this.project,
-            stage: this.stage,
-            scenario: this.scenario,
-            parent3D: this.parent3D,
-            pilar: this,
-            meshId: meshId,
-            spotId: spotId,
-            SCENT_ID: this.SCENT_ID,
-        })
+        // const meshId = "coin"+this.itemId.split("pilar")[1]
+        // const spotId = "pilartop"+this.itemId.split("pilar")[1]
+        // this.coin = new Coin3D({
+        //     app: this.app,
+        //     project: this.project,
+        //     stage: this.stage,
+        //     scenario: this.scenario,
+        //     parent3D: this.parent3D,
+        //     pilar: this,
+        //     meshId: meshId,
+        //     spotId: spotId,
+        //     SCENT_ID: this.SCENT_ID,
+        // })
     }
     //----------------------------------------------
     // PUBLIC:

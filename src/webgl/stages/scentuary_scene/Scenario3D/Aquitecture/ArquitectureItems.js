@@ -11,6 +11,8 @@ class ArquitectureItems{
         this.parent3D = obj.parent3D
         //-----------------------------
         this._build_item("archwall")
+        // this._build_item("archinside")
+        this._build_gold_item("archinside")
         this._build_item("walls")
         this._build_item("floor")
         this._build_item("benchTop")
@@ -133,11 +135,11 @@ class ArquitectureItems{
         const marbleMaterial = new THREE.MeshStandardMaterial({
             map: texture, // Use the loaded texture
             aoMap: texture_ao,
-            aoMapIntensity: 0.5,
+            aoMapIntensity: 1.0,
             lightMap: texture_bump,
             lightMapIntensity: 2.5,
             // color: this.scenario.BESE_MARBEL_COLOR, // Ivory base color
-            roughness: 0.45,   // Moderate roughness for a soft shine
+            roughness: 0.2,   // Moderate roughness for a soft shine
             metalness: 0.0,   // Non-metallic
             
             bumpMap: texture_bump,
@@ -145,6 +147,30 @@ class ArquitectureItems{
             // lightMap: this.texture_bump,
             // lightMapIntensity: 0.5,
             side: THREE.DoubleSide
+          });
+        mesh.material = marbleMaterial
+        mesh.receiveShadow = true;
+        this.parent3D.add(mesh)
+    }
+    _build_gold_item(itemId){
+        const mesh = this.stage.get_mesh_from_GLB_PROJECT(itemId)
+        const texture = this.stage.loader.get_texture(itemId)
+        texture.flipY = false;
+        const texture_ao = this.stage.loader.get_texture(itemId+"_ao")
+        texture_ao.flipY = false;
+        const texture_bump = this.stage.loader.get_texture(itemId+"_bump")
+        texture_bump.flipY = false;
+        // const marbleMaterial = new THREE.MeshStandardMaterial({
+        const marbleMaterial = new THREE.MeshPhongMaterial({
+            map: texture, // Use the loaded texture
+            color: new THREE.Color(0xaf8140), // Rich gold color (hex for gold)
+            metalness: 1.0,               // Fully metallic
+            roughness: 0.2,               // A bit of roughness for realism
+            emissive: new THREE.Color(0xaf8140), // Rich gold color (hex for gold)
+            emissiveIntensity: 0.1,       // Soft glow
+            envMap: this.stage.envmap,
+            envMapInearensity: 0.2,          // Intensity of the environment map reflection
+
           });
         mesh.material = marbleMaterial
         mesh.receiveShadow = true;

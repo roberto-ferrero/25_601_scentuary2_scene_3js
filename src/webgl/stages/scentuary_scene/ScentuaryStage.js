@@ -27,6 +27,7 @@ class ScentuaryStage extends StageSuper{
         //-------------------
         this.STAGE_SIZE = this.app.size.CURRENT
         this.SCENT_ARRAY = ["scent1", "scent2", "scent3", "scent4", "scent5", "scent6", "scent7", "scent8"]
+        this.PILARS_ARRAY = ["pilar1", "pilar2", "pilar3", "pilar4", "pilar5", "pilar6", "pilar7", "pilar8"]
         //-------------------
         this.MOUSE_PAN_FACTOR_EASED = new EasedOutValue(1, 0.05, 0.005, this.app.emitter, "onUpdateRAF")
         //--------------------
@@ -77,10 +78,14 @@ class ScentuaryStage extends StageSuper{
         const textureRes_4k = "4k/"
         const aoRes_4k = "4k/"
 
-        this.loader.add_texture("archwall", this.app.loader_pathPrefix+"img/bakings/2k/archwall.jpg", true)
-        this.loader.add_texture("archwall_ao", this.app.loader_pathPrefix+"img/bakings/2k/archwall_ao.jpg", true)
-        this.loader.add_texture("archwall_bump", this.app.loader_pathPrefix+"img/bakings/2k/archwall_bump.jpg", true)
-        
+        this.loader.add_texture("archwall", this.app.loader_pathPrefix+"img/bakings/1k/archwall.jpg", true)
+        this.loader.add_texture("archwall_ao", this.app.loader_pathPrefix+"img/bakings/1k/archwall_ao.jpg", true)
+        this.loader.add_texture("archwall_bump", this.app.loader_pathPrefix+"img/bakings/1k/archwall_bump.jpg", true)
+
+        this.loader.add_texture("archinside", this.app.loader_pathPrefix+"img/bakings/1k/archinside_gold.jpg", true)
+        this.loader.add_texture("archinside_ao", this.app.loader_pathPrefix+"img/bakings/1k/archinside_ao.jpg", true)
+        this.loader.add_texture("archinside_bump", this.app.loader_pathPrefix+"img/bakings/1k/archinside_bump.jpg", true)
+
         this.loader.add_texture("floor", this.app.loader_pathPrefix+"img/bakings/2k/floor.jpg", true)
         this.loader.add_texture("floor_ao", this.app.loader_pathPrefix+"img/bakings/2k/floor_ao.jpg", true)
         this.loader.add_texture("floor_bump", this.app.loader_pathPrefix+"img/bakings/2k/floor_bump.jpg", true)
@@ -100,14 +105,18 @@ class ScentuaryStage extends StageSuper{
         this.loader.add_texture("benchBase_ao", this.app.loader_pathPrefix+"img/bakings/2k/benchBase_ao.jpg", true)
         this.loader.add_texture("benchBase_bump", this.app.loader_pathPrefix+"img/bakings/2k/benchBase_bump.jpg", true)
 
+        this.PILARS_ARRAY.map((pilarId)=>{
+            this.loader.add_texture(pilarId, this.app.loader_pathPrefix+"img/bakings/05k/"+pilarId+".jpg", true)
+            this.loader.add_texture(pilarId+"_ao", this.app.loader_pathPrefix+"img/bakings/05k/"+pilarId+"_ao.jpg", true)
+            this.loader.add_texture(pilarId+"_bump", this.app.loader_pathPrefix+"img/bakings/05k/"+pilarId+"_bump.jpg", true)
+        })
+
+
         // this.loader.add_texture("arc", this.app.loader_pathPrefix+"img/bakings/4k/arc.jpg", true) 
         // this.loader.add_texture("arc_ao", this.app.loader_pathPrefix+"img/bakings/2k/arc_ao.jpg", true)
         // this.loader.add_texture("arc_bump", this.app.loader_pathPrefix+"img/bakings/2k/arc_bump.jpg", true)
 
 
-        // this.loader.add_texture("pilar1", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar1.jpg", true)
-        // this.loader.add_texture("pilar1_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar1_ao.jpg", true)
-        // this.loader.add_texture("pilar1_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar1_bump.jpg", true)
 
         // this.loader.add_texture("pilar2", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar2.jpg", true)
         // this.loader.add_texture("pilar2_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar2_ao.jpg", true)
