@@ -29,7 +29,7 @@ class Pools{
 
         //---
         //const seaGeometry = new THREE.PlaneGeometry(100, 400, 10, 100) // Replace size if needed
-       const seaGeometry = new THREE.PlaneGeometry(5, 5, 10, 10) // Replace size if needed
+       const seaGeometry = new THREE.PlaneGeometry(5, 1, 1, 1) // Replace size if needed
        
         const waterNormals = this.stage.loader.get_texture("waternormals");
         waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
@@ -46,8 +46,8 @@ class Pools{
             // flowDirection: new THREE.Vector2(1, 1),
             // textureWidth: 1024,
             // textureHeight: 1024
-            textureWidth: 512,
-            textureHeight: 512,
+            textureWidth: 128,
+            textureHeight: 128,
             flowDirection: new THREE.Vector2(1, 0.2),
             waterNormals: waterNormals,
             normalMap0: normalMap0,
@@ -60,7 +60,7 @@ class Pools{
         })
         this.pool1_mesh.rotation.x = -Math.PI / 2
         this.pool1_mesh.rotation.z = Math.PI
-        this.pool1_mesh.position.set(-5, -0.10, -2.7)
+        this.pool1_mesh.position.set(-0.7-4, -0.05, -2.5)
         // this.mesh.rotation.z = -Math.PI / 2
         this.parent3D.add(this.pool1_mesh)
         //--
@@ -70,8 +70,8 @@ class Pools{
             // flowDirection: new THREE.Vector2(1, 1),
             // textureWidth: 1024,
             // textureHeight: 1024
-            textureWidth: 512,
-            textureHeight: 512,
+            textureWidth: 128,
+            textureHeight: 128,
             flowDirection: new THREE.Vector2(1, 0.2),
             waterNormals: waterNormals,
             normalMap0: normalMap0,
@@ -85,7 +85,7 @@ class Pools{
         })
         this.pool2_mesh.rotation.x = -Math.PI / 2
         this.pool2_mesh.rotation.z = Math.PI
-        this.pool2_mesh.position.set(-5, -0.10, 2.7)
+        this.pool2_mesh.position.set(-0.7-4, -0.05, 2.5)
         // this.mesh.rotation.z = -Math.PI / 2
         this.parent3D.add(this.pool2_mesh)
 

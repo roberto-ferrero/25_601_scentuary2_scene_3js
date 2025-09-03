@@ -60,7 +60,7 @@ class Lights{
         })
         //-----------------------------
         // AMBIENT:
-        const dev_ambientLight = new THREE.AmbientLight(0xe5a860, 2.2); // Soft white light
+        const dev_ambientLight = new THREE.AmbientLight(0xe5a860, 2.0); // Soft white light
         this.parent3D.add(dev_ambientLight);
         //-----------------------------
         this.stage.GLB_PROJECT.children.map((child)=>{

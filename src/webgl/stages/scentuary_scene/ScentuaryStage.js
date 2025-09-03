@@ -78,37 +78,42 @@ class ScentuaryStage extends StageSuper{
         const textureRes_4k = "4k/"
         const aoRes_4k = "4k/"
 
-        this.loader.add_texture("archwall", this.app.loader_pathPrefix+"img/bakings/1k/archwall.jpg", true)
-        this.loader.add_texture("archwall_ao", this.app.loader_pathPrefix+"img/bakings/1k/archwall_ao.jpg", true)
-        this.loader.add_texture("archwall_bump", this.app.loader_pathPrefix+"img/bakings/1k/archwall_bump.jpg", true)
+        this.loader.add_texture("archwall", this.app.loader_pathPrefix+"img/bakings/2k/archwall.jpg", true)
+        this.loader.add_texture("archwall_ao", this.app.loader_pathPrefix+"img/bakings/2k/archwall_ao.jpg", true)
+        this.loader.add_texture("archwall_bump", this.app.loader_pathPrefix+"img/bakings/2k/archwall_bump.jpg", true)
 
-        this.loader.add_texture("archinside", this.app.loader_pathPrefix+"img/bakings/1k/archinside_gold.jpg", true)
-        this.loader.add_texture("archinside_ao", this.app.loader_pathPrefix+"img/bakings/1k/archinside_ao.jpg", true)
-        this.loader.add_texture("archinside_bump", this.app.loader_pathPrefix+"img/bakings/1k/archinside_bump.jpg", true)
+        this.loader.add_texture("archinside", this.app.loader_pathPrefix+"img/bakings/2k/archinside.jpg", true)
+        this.loader.add_texture("archinside_ao", this.app.loader_pathPrefix+"img/bakings/2k/archinside_ao.jpg", true)
+        this.loader.add_texture("archinside_bump", this.app.loader_pathPrefix+"img/bakings/2k/archinside_bump.jpg", true)
 
-        this.loader.add_texture("floor", this.app.loader_pathPrefix+"img/bakings/2k/floor.jpg", true)
-        this.loader.add_texture("floor_ao", this.app.loader_pathPrefix+"img/bakings/2k/floor_ao.jpg", true)
-        this.loader.add_texture("floor_bump", this.app.loader_pathPrefix+"img/bakings/2k/floor_bump.jpg", true)
+        // this.loader.add_texture("archbevel", this.app.loader_pathPrefix+"img/bakings/2k/archbevel.jpg", true)
+        // this.loader.add_texture("archbevel_ao", this.app.loader_pathPrefix+"img/bakings/2k/archbevel_ao.jpg", true)
+        // this.loader.add_texture("archbevel_bump", this.app.loader_pathPrefix+"img/bakings/2k/archbevel_bump.jpg", true)
+
+        this.loader.add_texture("floor", this.app.loader_pathPrefix+"img/bakings/4k/floor.jpg", true)
+        this.loader.add_texture("floor_ao", this.app.loader_pathPrefix+"img/bakings/4k/floor_ao.jpg", true)
+        this.loader.add_texture("floor_bump", this.app.loader_pathPrefix+"img/bakings/4k/floor_bump.jpg", true)
         
-        this.loader.add_texture("pools", this.app.loader_pathPrefix+"img/bakings/1k/pools.jpg", true)
-        this.loader.add_texture("pools_ao", this.app.loader_pathPrefix+"img/bakings/1k/pools_ao.jpg", true)
-        this.loader.add_texture("pools_bump", this.app.loader_pathPrefix+"img/bakings/1k/pools_bump.jpg", true)
+        this.loader.add_texture("pools", this.app.loader_pathPrefix+"img/bakings/2k/pools.jpg", true)
+        this.loader.add_texture("pools_ao", this.app.loader_pathPrefix+"img/bakings/2k/pools_ao.jpg", true)
+        this.loader.add_texture("pools_bump", this.app.loader_pathPrefix+"img/bakings/2k/pools_bump.jpg", true)
         
-        this.loader.add_texture("walls", this.app.loader_pathPrefix+"img/bakings/1k/walls.jpg", true) 
-        this.loader.add_texture("walls_ao", this.app.loader_pathPrefix+"img/bakings/1k/walls_ao.jpg", true)
-        this.loader.add_texture("walls_bump", this.app.loader_pathPrefix+"img/bakings/1k/walls_bump.jpg", true)
+        this.loader.add_texture("walls", this.app.loader_pathPrefix+"img/bakings/2k/walls.jpg", true) 
+        this.loader.add_texture("walls_ao", this.app.loader_pathPrefix+"img/bakings/2k/walls_ao.jpg", true)
+        this.loader.add_texture("walls_bump", this.app.loader_pathPrefix+"img/bakings/2k/walls_bump.jpg", true)
 
-        this.loader.add_texture("benchTop", this.app.loader_pathPrefix+"img/bakings/2k/benchTop.jpg", true)
-        this.loader.add_texture("benchTop_ao", this.app.loader_pathPrefix+"img/bakings/2k/benchTop_ao.jpg", true)
-        this.loader.add_texture("benchTop_bump", this.app.loader_pathPrefix+"img/bakings/2k/benchTop_bump.jpg", true)
-        this.loader.add_texture("benchBase", this.app.loader_pathPrefix+"img/bakings/2k/benchBase.jpg", true)
-        this.loader.add_texture("benchBase_ao", this.app.loader_pathPrefix+"img/bakings/2k/benchBase_ao.jpg", true)
-        this.loader.add_texture("benchBase_bump", this.app.loader_pathPrefix+"img/bakings/2k/benchBase_bump.jpg", true)
+        this.loader.add_texture("benchTop", this.app.loader_pathPrefix+"img/bakings/1k/benchTop.jpg", true)
+        this.loader.add_texture("benchTop_ao", this.app.loader_pathPrefix+"img/bakings/1k/benchTop_ao.jpg", true)
+        this.loader.add_texture("benchTop_bump", this.app.loader_pathPrefix+"img/bakings/1k/benchTop_bump.jpg", true)
+
+        this.loader.add_texture("benchBase", this.app.loader_pathPrefix+"img/bakings/1k/benchBase.jpg", true)
+        this.loader.add_texture("benchBase_ao", this.app.loader_pathPrefix+"img/bakings/1k/benchBase_ao.jpg", true)
+        this.loader.add_texture("benchBase_bump", this.app.loader_pathPrefix+"img/bakings/1k/benchBase_bump.jpg", true)
 
         this.PILARS_ARRAY.map((pilarId)=>{
-            this.loader.add_texture(pilarId, this.app.loader_pathPrefix+"img/bakings/05k/"+pilarId+".jpg", true)
-            this.loader.add_texture(pilarId+"_ao", this.app.loader_pathPrefix+"img/bakings/05k/"+pilarId+"_ao.jpg", true)
-            this.loader.add_texture(pilarId+"_bump", this.app.loader_pathPrefix+"img/bakings/05k/"+pilarId+"_bump.jpg", true)
+            this.loader.add_texture(pilarId, this.app.loader_pathPrefix+"img/bakings/1k/"+pilarId+".jpg", true)
+            this.loader.add_texture(pilarId+"_ao", this.app.loader_pathPrefix+"img/bakings/1k/"+pilarId+"_ao.jpg", true)
+            this.loader.add_texture(pilarId+"_bump", this.app.loader_pathPrefix+"img/bakings/1k/"+pilarId+"_bump.jpg", true)
         })
 
 
@@ -168,7 +173,7 @@ class ScentuaryStage extends StageSuper{
         // this.loader.add_hdr("sky", this.app.loader_pathPrefix+"hdr/sunset_2K_2367bd73-c1f3-420b-8ccc-93b4edf3f246.hdr", true)
         // this.loader.add_hdr("sky", this.app.loader_pathPrefix+"hdr/syferfontein-1d-clear-pure-sky_2K_b7844629-ae4f-40d3-a4ca-c6a75946629c.hdr", true)
         // this.loader.add_hdr("sky", this.app.loader_pathPrefix+"hdr/tranquil-shorizon-sunset_4K_18d64fa0-51da-4ec1-9441-da453cfd3590.hdr", true)
-        this.loader.add_hdr("sky", this.app.loader_pathPrefix+"hdr/tranquil-horizon-sunset_4K_18d64fa0-51da-4ec1-9441-da453cfd3590_centered.hdr", true)
+        this.loader.add_hdr("sky", this.app.loader_pathPrefix+"hdr/tranquil-horizon-blue.hdr", true)
         this.loader.add_hdr("envmap", this.app.loader_pathPrefix+"hdr/georgentor_2k.hdr", true)
         // this.loader.add_hdr("sky", this.app.loader_pathPrefix+"hdr/sunset2_2K.hdr", true)
         
@@ -231,7 +236,7 @@ class ScentuaryStage extends StageSuper{
         const envmap_hdrTexture = this.loader.get_hdr("envmap")
         this.envmap = pmremGenerator.fromEquirectangular(envmap_hdrTexture).texture;
         this.app.scene.environment = this.envmap;
-        this.app.scene.environmentIntensity = 0.0
+        this.app.scene.environmentIntensity = 0.06
 
         bg_hdrTexture.dispose();
         envmap_hdrTexture.dispose();

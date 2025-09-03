@@ -33,7 +33,7 @@ class Scenario3D{
         this.app.render.renderer.shadowMap.type = THREE.PCFSoftShadowMap; // or THREE.BasicShadowMap / THREE.PCFShadowMap
 
         //-----------------------------
-        this.stage.scene.fog = new THREE.Fog( 0xffc665, 1, 100 );
+        //this.stage.scene.fog = new THREE.Fog( 0xffc665, 1, 100 );
         //-----------------------------
         // this.sun = new Sun({
         //     app:this.app,
@@ -74,15 +74,15 @@ class Scenario3D{
             scenario:this,
             parent3D:this.cont3D
         })
-        this.pools = new Pools({
-            app:this.app,
-            project:this.project,
-            stage:this.stage,
-            scenario:this,
-            sunPosition:this.lights.sun.POSITION,
-            sunColor:this.lights.sun.COLOR,
-            parent3D:this.cont3D
-        })
+            this.pools = new Pools({
+                app:this.app,
+                project:this.project,
+                stage:this.stage,
+                scenario:this,
+                sunPosition:this.lights.sun.POSITION,
+                sunColor:this.lights.sun.COLOR,
+                parent3D:this.cont3D
+            })
         this.sea = new Sea3D({
             app:this.app,
             project:this.project,

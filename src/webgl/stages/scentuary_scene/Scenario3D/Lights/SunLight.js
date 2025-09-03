@@ -14,13 +14,17 @@ class SunLight{
         this.mesh = obj.mesh
         this.mesh.position.copy(this.app.filter_blender_position(this.mesh.position))
         console.log("this.mesh.position: ", this.mesh.position);
-        this.mesh.position.y = this.mesh.position.y+9
+        // this.mesh.position.x = 0
+        this.mesh.position.y = 4
         //--
         this.ORIGIN = new THREE.Vector3(0, 0, 0)
-        this.POSITION = new THREE.Vector3().copy(this.app.filter_blender_position(this.mesh.position))
+        // this.POSITION = new THREE.Vector3().copy(this.app.filter_blender_position(this.mesh.position))
+        this.POSITION = new THREE.Vector3(4, 1.5, 0)
         // this.COLOR = new THREE.Color(0xffe92b)
         // this.COLOR = new THREE.Color(0xff09ff)
-        this.COLOR = new THREE.Color(0xe6b490)
+        // this.COLOR = new THREE.Color(0xffd9ab) // dorado casi blanco
+        this.COLOR = new THREE.Color(0xffc175) // dorado casi blanco pero menos
+        // this.COLOR = new THREE.Color(0xff0000)
         this.ELEVATION = GeomUtils.get_elevation(this.ORIGIN, this.POSITION)
         this.AZIMUTH = GeomUtils.get_azimuth(this.ORIGIN, this.POSITION)
         //--
@@ -29,7 +33,8 @@ class SunLight{
         this.app.register_helper(this.sun_helper)
         this.parent3D.add(this.sun_helper)
         //------------
-        this.sunLight = new THREE.DirectionalLight(this.COLOR, 0.6)
+        const sunlight_intesity = 4
+        this.sunLight = new THREE.DirectionalLight(this.COLOR, 1)
         this.sunLight.position.copy(this.POSITION)
         this.sunLight.target.position.copy(this.ORIGIN)
         this.sunLight.target.updateMatrixWorld()    
@@ -42,6 +47,10 @@ class SunLight{
         this.sunLight.shadow.bias = -0.0001
         this.parent3D.add(this.sunLight.target)
         this.parent3D.add(this.sunLight)    
+        //------------
+        this.sunLight_helper = new THREE.DirectionalLightHelper( this.sunLight, sunlight_intesity, this.COLOR);
+        this.app.register_helper(this.sunLight_helper);
+        this.parent3D.add(this.sunLight_helper);
         //------------
         // this.app.dev.gui?.add(this, 'AZIMUTH', -Math.PI*2, Math.PI*2, 0.001).listen().onChange((value) => {
         //     this.POSITION = GeomUtils.get_star(this.ORIGIN, this.AZIMUTH, this.ELEVATION, this.get_distance2Origin())

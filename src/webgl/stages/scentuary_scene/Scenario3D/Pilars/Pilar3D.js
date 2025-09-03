@@ -52,7 +52,7 @@ class Pilar3D{
             metalness: 0.0,   // Non-metallic
             
             bumpMap: this.texture_bump,
-            bumpScale: -10, // Adjust the bump scale as needed
+            bumpScale: 5, // Adjust the bump scale as needed
             // lightMap: this.texture_bump,
             // lightMapIntensity: 0.5,
             // side: THREE.DoubleSide

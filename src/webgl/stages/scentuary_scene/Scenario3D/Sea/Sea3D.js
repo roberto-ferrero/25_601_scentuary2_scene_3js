@@ -24,7 +24,7 @@ class Sea3D{
         //-----------------------------
         // this.mesh = this.stage.get_mesh_from_GLB_PROJECT(this.itemId)
         //---
-        const seaGeometry = new THREE.PlaneGeometry(100, 400, 10, 100) // Replace size if needed
+        const seaGeometry = new THREE.PlaneGeometry(100, 200, 1, 1) // Replace size if needed
 
         const waterNormals = this.stage.loader.get_texture("waternormals");
         waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
@@ -35,8 +35,8 @@ class Sea3D{
             // flowDirection: new THREE.Vector2(1, 1),
             // textureWidth: 1024,
             // textureHeight: 1024
-            textureWidth: 512,
-            textureHeight: 512,
+            textureWidth: 128,
+            textureHeight: 128,
             flowDirection: new THREE.Vector2(params.flowX, params.flowY),
             // waterNormals: new THREE.TextureLoader().load(
             //     'https://threejs.org/examples/textures/waternormals.jpg',
@@ -54,7 +54,7 @@ class Sea3D{
         console.log("flowDirection: ", this.mesh.material.uniforms.flowDirection);
         this.mesh.rotation.x = -Math.PI / 2
         this.mesh.rotation.z = Math.PI
-        this.mesh.position.set(19.0+30.5, -0.2, 0)
+        this.mesh.position.set(54.5-4, -0.2, 0)
         // this.mesh.rotation.z = -Math.PI / 2
         this.parent3D.add(this.mesh)
 

@@ -11,8 +11,8 @@ class ArquitectureItems{
         this.parent3D = obj.parent3D
         //-----------------------------
         this._build_item("archwall")
-        // this._build_item("archinside")
         this._build_gold_item("archinside")
+        // this._build_gold_item("archbevel")
         this._build_item("walls")
         this._build_item("floor")
         this._build_item("benchTop")
@@ -137,13 +137,13 @@ class ArquitectureItems{
             aoMap: texture_ao,
             aoMapIntensity: 1.0,
             lightMap: texture_bump,
-            lightMapIntensity: 2.5,
+            lightMapIntensity: 2,
             // color: this.scenario.BESE_MARBEL_COLOR, // Ivory base color
             roughness: 0.2,   // Moderate roughness for a soft shine
             metalness: 0.0,   // Non-metallic
             
             bumpMap: texture_bump,
-            bumpScale: -5, // Adjust the bump scale as needed
+            bumpScale: 1, // Adjust the bump scale as needed
             // lightMap: this.texture_bump,
             // lightMapIntensity: 0.5,
             side: THREE.DoubleSide
@@ -163,13 +163,21 @@ class ArquitectureItems{
         // const marbleMaterial = new THREE.MeshStandardMaterial({
         const marbleMaterial = new THREE.MeshPhongMaterial({
             map: texture, // Use the loaded texture
-            color: new THREE.Color(0xaf8140), // Rich gold color (hex for gold)
-            metalness: 1.0,               // Fully metallic
-            roughness: 0.2,               // A bit of roughness for realism
-            emissive: new THREE.Color(0xaf8140), // Rich gold color (hex for gold)
-            emissiveIntensity: 0.1,       // Soft glow
-            envMap: this.stage.envmap,
-            envMapInearensity: 0.2,          // Intensity of the environment map reflection
+            // aoMap: texture_ao,
+            // aoMapIntensity: 1.0,
+            // lightMap: texture_bump,
+            // lightMapIntensity: 2.5,
+            color: new THREE.Color(0xe9c73f), // Ivory base color
+            roughness: 0.2,   // Moderate roughness for a soft shine
+            metalness: 0.9,   // Non-metallic
+            
+            // bumpMap: texture_bump,
+            // bumpScale: 5, // Adjust the bump scale as needed
+            lightMap: this.texture_bump,
+            lightMapIntensity: 0.5,
+            emissive: new THREE.Color(0xe9c73f), // Ivory base color
+            emissiveIntensity: 0.1,
+            // side: THREE.DoubleSide
 
           });
         mesh.material = marbleMaterial
