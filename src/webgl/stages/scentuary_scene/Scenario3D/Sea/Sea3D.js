@@ -18,8 +18,8 @@ class Sea3D{
         const params = {
             color: '#ffffff',
             scale: 4,
-            flowX: 1,
-            flowY: 1
+            flowX: 0.1,
+            flowY: 0
         };
         //-----------------------------
         // this.mesh = this.stage.get_mesh_from_GLB_PROJECT(this.itemId)
@@ -54,7 +54,7 @@ class Sea3D{
         console.log("flowDirection: ", this.mesh.material.uniforms.flowDirection);
         this.mesh.rotation.x = -Math.PI / 2
         this.mesh.rotation.z = Math.PI
-        this.mesh.position.set(54.5-4, -0.2, 0)
+        this.mesh.position.set(50, -1.2, 0)
         // this.mesh.rotation.z = -Math.PI / 2
         this.parent3D.add(this.mesh)
 

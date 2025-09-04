@@ -48,7 +48,7 @@ class Pools{
             // textureHeight: 1024
             textureWidth: 128,
             textureHeight: 128,
-            flowDirection: new THREE.Vector2(1, 0.2),
+            flowDirection: new THREE.Vector2(0.1, 0.0),
             waterNormals: waterNormals,
             normalMap0: normalMap0,
             normalMap1: normalMap1,
@@ -72,7 +72,7 @@ class Pools{
             // textureHeight: 1024
             textureWidth: 128,
             textureHeight: 128,
-            flowDirection: new THREE.Vector2(1, 0.2),
+            flowDirection: new THREE.Vector2(0.1, 0),
             waterNormals: waterNormals,
             normalMap0: normalMap0,
             normalMap1: normalMap1,

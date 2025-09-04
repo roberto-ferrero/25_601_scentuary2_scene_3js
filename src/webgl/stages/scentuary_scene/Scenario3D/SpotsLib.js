@@ -16,6 +16,7 @@ class SpotsLib{
         this.stage.GLB_PROJECT.children.map((item)=>{
             if(item.name.includes("_spot")){
                 const spotId = item.name.split("_")[0]
+                console.log("spotId: ", spotId);
                 this.DATA.nuevoItem(spotId, item)
             }
         })

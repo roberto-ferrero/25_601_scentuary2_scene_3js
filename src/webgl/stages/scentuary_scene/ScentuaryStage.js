@@ -28,6 +28,8 @@ class ScentuaryStage extends StageSuper{
         this.STAGE_SIZE = this.app.size.CURRENT
         this.SCENT_ARRAY = ["scent1", "scent2", "scent3", "scent4", "scent5", "scent6", "scent7", "scent8"]
         this.PILARS_ARRAY = ["pilar1", "pilar2", "pilar3", "pilar4", "pilar5", "pilar6", "pilar7", "pilar8"]
+        this.SEALS_ARRAY = ["seal1", "seal2", "seal3", "seal4", "seal5", "seal6", "seal7", "seal8"]
+        this.TEXTS_ARRAY = ["text1", "text2", "text3", "text4", "text5", "text6", "text7", "text8"]
         //-------------------
         this.MOUSE_PAN_FACTOR_EASED = new EasedOutValue(1, 0.05, 0.005, this.app.emitter, "onUpdateRAF")
         //--------------------
@@ -109,70 +111,23 @@ class ScentuaryStage extends StageSuper{
         this.loader.add_texture("benchBase", this.app.loader_pathPrefix+"img/bakings/1k/benchBase.jpg", true)
         this.loader.add_texture("benchBase_ao", this.app.loader_pathPrefix+"img/bakings/1k/benchBase_ao.jpg", true)
         this.loader.add_texture("benchBase_bump", this.app.loader_pathPrefix+"img/bakings/1k/benchBase_bump.jpg", true)
-
+        
         this.PILARS_ARRAY.map((pilarId)=>{
             this.loader.add_texture(pilarId, this.app.loader_pathPrefix+"img/bakings/1k/"+pilarId+".jpg", true)
             this.loader.add_texture(pilarId+"_ao", this.app.loader_pathPrefix+"img/bakings/1k/"+pilarId+"_ao.jpg", true)
             this.loader.add_texture(pilarId+"_bump", this.app.loader_pathPrefix+"img/bakings/1k/"+pilarId+"_bump.jpg", true)
         })
 
+        this.SEALS_ARRAY.map((sealId)=>{
+            this.loader.add_texture(sealId, this.app.loader_pathPrefix+"img/seals/"+sealId+".png", true)
+        })
+        this.TEXTS_ARRAY.map((textId)=>{
+            this.loader.add_texture(textId, this.app.loader_pathPrefix+"img/seals/"+textId+".png", true)
+        })
 
-        // this.loader.add_texture("arc", this.app.loader_pathPrefix+"img/bakings/4k/arc.jpg", true) 
-        // this.loader.add_texture("arc_ao", this.app.loader_pathPrefix+"img/bakings/2k/arc_ao.jpg", true)
-        // this.loader.add_texture("arc_bump", this.app.loader_pathPrefix+"img/bakings/2k/arc_bump.jpg", true)
+        this.loader.add_texture("logo", this.app.loader_pathPrefix+"img/bakings/1k/logo.png", true)
 
-
-
-        // this.loader.add_texture("pilar2", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar2.jpg", true)
-        // this.loader.add_texture("pilar2_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar2_ao.jpg", true)
-        // this.loader.add_texture("pilar2_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar2_bump.jpg", true)
-
-        // this.loader.add_texture("pilar3", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar3.jpg", true)
-        // this.loader.add_texture("pilar3_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar3_ao.jpg", true)
-        // this.loader.add_texture("pilar3_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar3_bump.jpg", true)
-
-        // this.loader.add_texture("pilar4", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar4.jpg", true)
-        // this.loader.add_texture("pilar4_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar4_ao.jpg", true)
-        // this.loader.add_texture("pilar4_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar4_bump.jpg", true)
-
-        // this.loader.add_texture("pilar5", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar5.jpg", true)
-        // this.loader.add_texture("pilar5_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar5_ao.jpg", true)
-        // this.loader.add_texture("pilar5_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar5_bump.jpg", true)
-
-        // this.loader.add_texture("pilar6", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar6.jpg", true)
-        // this.loader.add_texture("pilar6_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar6_ao.jpg", true)
-        // this.loader.add_texture("pilar6_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar6_bump.jpg", true)
-
-        // this.loader.add_texture("pilar7", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar7.jpg", true)
-        // this.loader.add_texture("pilar7_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar7_ao.jpg", true)
-        // this.loader.add_texture("pilar7_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar7_bump.jpg", true)
-
-        // this.loader.add_texture("pilar8", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"pilar8.jpg", true)
-        // this.loader.add_texture("pilar8_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar8_ao.jpg", true)
-        // this.loader.add_texture("pilar8_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"pilar8_bump.jpg", true)
-
-
-        // this.loader.add_texture("stairs", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"stairs.jpg", true)
-        // this.loader.add_texture("stairs_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"stairs_ao.jpg", true)
-        // this.loader.add_texture("stairs_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"stairs_bump.jpg", true)
-
-        
-
-
-        // this.loader.add_texture("goldenframe", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"goldenframe.jpg", true)
-        // this.loader.add_texture("goldenframe", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"goldenframe_ao.jpg", true)
-
-        // this.loader.add_texture("poolwalls", this.app.loader_pathPrefix+"img/bakings/"+textureRes_05k+"poolwalls.jpg", true)
-        // this.loader.add_texture("poolwalls_ao", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"poolwalls_ao.jpg", true)
-        // this.loader.add_texture("poolwalls_bump", this.app.loader_pathPrefix+"img/bakings/"+aoRes_05k+"poolwalls_bump.jpg", true)
-
-        // this.loader.add_texture("spiral_sparkle", this.app.loader_pathPrefix+"img/sparkle.png", true)                       
-
-
-
-        // this.loader.add_hdr("sky", this.app.loader_pathPrefix+"hdr/sunset_2K_2367bd73-c1f3-420b-8ccc-93b4edf3f246.hdr", true)
-        // this.loader.add_hdr("sky", this.app.loader_pathPrefix+"hdr/syferfontein-1d-clear-pure-sky_2K_b7844629-ae4f-40d3-a4ca-c6a75946629c.hdr", true)
-        // this.loader.add_hdr("sky", this.app.loader_pathPrefix+"hdr/tranquil-shorizon-sunset_4K_18d64fa0-51da-4ec1-9441-da453cfd3590.hdr", true)
+        // ENVIROMEMT
         this.loader.add_hdr("sky", this.app.loader_pathPrefix+"hdr/tranquil-horizon-blue.hdr", true)
         this.loader.add_hdr("envmap", this.app.loader_pathPrefix+"hdr/georgentor_2k.hdr", true)
         // this.loader.add_hdr("sky", this.app.loader_pathPrefix+"hdr/sunset2_2K.hdr", true)

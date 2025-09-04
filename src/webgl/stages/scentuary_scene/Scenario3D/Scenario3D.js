@@ -4,11 +4,12 @@ import * as THREE from 'three'
 // import Sun from "./Lights/SunLight"
 import PilarsGroup from "./Pilars/PilarsGroup"
 import ArquitectureItems from './Aquitecture/ArquitectureItems'
+import FloorLogo from './Aquitecture/FloorLogo'
 import Sea3D from './Sea/Sea3D'
 // import PointLight3D from './Lights/PointLight3D'
 import MouseInteractions from './MouseInteractions/MouseInteractions'
 import Sun3D from './Sun3D'
-import VegetationGroup from './Vegetation/VegetationGroup'
+
 import SpiralFx from './SpiralFX/SpiralFx'
 import Pools from './Pools/Pools'
 import Lights from './Lights/Lights'
@@ -61,6 +62,13 @@ class Scenario3D{
         //---------------------------
         // ITEMS:
         this.arquitectureItems = new ArquitectureItems({
+            app:this.app,
+            project:this.project,
+            stage:this.stage,
+            scenario:this,
+            parent3D:this.cont3D
+        })
+        this.logo = new FloorLogo({
             app:this.app,
             project:this.project,
             stage:this.stage,

@@ -12,12 +12,13 @@ class ArquitectureItems{
         //-----------------------------
         this._build_item("archwall")
         this._build_gold_item("archinside")
-        // this._build_gold_item("archbevel")
         this._build_item("walls")
         this._build_item("floor")
         this._build_item("benchTop")
         this._build_item("benchBase")
         this._build_item("pools")
+
+        // this._build_gold_item("archbevel")
 
         // this.mesh1 = this.stage.get_mesh_from_GLB_PROJECT("floor")
         // this.texture1 = this.stage.loader.get_texture("floor")
@@ -139,7 +140,7 @@ class ArquitectureItems{
             lightMap: texture_bump,
             lightMapIntensity: 2,
             // color: this.scenario.BESE_MARBEL_COLOR, // Ivory base color
-            roughness: 0.2,   // Moderate roughness for a soft shine
+            roughness: 0.5,   // Moderate roughness for a soft shine
             metalness: 0.0,   // Non-metallic
             
             bumpMap: texture_bump,
