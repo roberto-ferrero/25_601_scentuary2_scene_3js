@@ -48,7 +48,7 @@ class LensFlare{
             vertexShader:  vertex,
             fragmentShader:  fragment,
             visible:true,
-            // wireframe: trues
+            // wireframe: true
         })
         this.mesh = new THREE.Mesh(this.geometry, this.material)
         this.cont3D.add(this.mesh)

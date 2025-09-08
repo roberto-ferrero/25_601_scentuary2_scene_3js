@@ -128,7 +128,7 @@ class ArquitectureItems{
     _build_item(itemId){
         const mesh = this.stage.get_mesh_from_GLB_PROJECT(itemId)
         const texture = this.stage.loader.get_texture(itemId)
-        texture.flipY = false;
+        texture.flipY = false;      
         const texture_ao = this.stage.loader.get_texture(itemId+"_ao")
         texture_ao.flipY = false;
         const texture_bump = this.stage.loader.get_texture(itemId+"_bump")
@@ -138,16 +138,18 @@ class ArquitectureItems{
             aoMap: texture_ao,
             aoMapIntensity: 1.0,
             lightMap: texture_bump,
-            lightMapIntensity: 2,
-            // color: this.scenario.BESE_MARBEL_COLOR, // Ivory base color
+            lightMapIntensity: 1.5,            // color: this.scenario.BESE_MARBEL_COLOR, // Ivory base color
             roughness: 0.5,   // Moderate roughness for a soft shine
             metalness: 0.0,   // Non-metallic
             
             bumpMap: texture_bump,
             bumpScale: 1, // Adjust the bump scale as needed
-            // lightMap: this.texture_bump,
-            // lightMapIntensity: 0.5,
-            side: THREE.DoubleSide
+
+            // emissiveMap:texture,
+            // emissive: new THREE.Color(this.scenario.BESE_MARBEL_COLOR),
+            // emissiveIntensity: 0.3,
+
+            // side: THREE.DoubleSide
           });
         mesh.material = marbleMaterial
         mesh.receiveShadow = true;
@@ -159,23 +161,23 @@ class ArquitectureItems{
         texture.flipY = false;
         const texture_ao = this.stage.loader.get_texture(itemId+"_ao")
         texture_ao.flipY = false;
-        const texture_bump = this.stage.loader.get_texture(itemId+"_bump")
-        texture_bump.flipY = false;
+        // const texture_bump = this.stage.loader.get_texture(itemId+"_bump")
+        // texture_bump.flipY = false;
         // const marbleMaterial = new THREE.MeshStandardMaterial({
         const marbleMaterial = new THREE.MeshPhongMaterial({
             map: texture, // Use the loaded texture
-            // aoMap: texture_ao,
-            // aoMapIntensity: 1.0,
+            aoMap: texture_ao,
+            aoMapIntensity: 1.0,
             // lightMap: texture_bump,
             // lightMapIntensity: 2.5,
-            color: new THREE.Color(0xe9c73f), // Ivory base color
+            // color: new THREE.Color(0xe9c73f), // Ivory base color
             roughness: 0.2,   // Moderate roughness for a soft shine
             metalness: 0.9,   // Non-metallic
             
             // bumpMap: texture_bump,
             // bumpScale: 5, // Adjust the bump scale as needed
-            lightMap: this.texture_bump,
-            lightMapIntensity: 0.5,
+            // lightMap: this.texture_bump,
+            // lightMapIntensity: 0.5,
             emissive: new THREE.Color(0xe9c73f), // Ivory base color
             emissiveIntensity: 0.1,
             // side: THREE.DoubleSide

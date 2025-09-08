@@ -86,7 +86,7 @@ class ScentuaryStage extends StageSuper{
 
         this.loader.add_texture("archinside", this.app.loader_pathPrefix+"img/bakings/2k/archinside.jpg", true)
         this.loader.add_texture("archinside_ao", this.app.loader_pathPrefix+"img/bakings/2k/archinside_ao.jpg", true)
-        this.loader.add_texture("archinside_bump", this.app.loader_pathPrefix+"img/bakings/2k/archinside_bump.jpg", true)
+        // this.loader.add_texture("archinside_bump", this.app.loader_pathPrefix+"img/bakings/2k/archinside_bump.jpg", true)
 
         // this.loader.add_texture("archbevel", this.app.loader_pathPrefix+"img/bakings/2k/archbevel.jpg", true)
         // this.loader.add_texture("archbevel_ao", this.app.loader_pathPrefix+"img/bakings/2k/archbevel_ao.jpg", true)

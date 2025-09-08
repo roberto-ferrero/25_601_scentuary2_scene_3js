@@ -34,13 +34,13 @@ class SunLight{
         this.parent3D.add(this.sun_helper)
         //------------
         const sunlight_intesity = 4
-        this.sunLight = new THREE.DirectionalLight(this.COLOR, 1)
+        this.sunLight = new THREE.DirectionalLight(this.COLOR, 0.8)
         this.sunLight.position.copy(this.POSITION)
         this.sunLight.target.position.copy(this.ORIGIN)
         this.sunLight.target.updateMatrixWorld()    
         this.sunLight.castShadow = true
-        this.sunLight.shadow.mapSize.width = 1024
-        this.sunLight.shadow.mapSize.height = 1024
+        this.sunLight.shadow.mapSize.width = 256
+        this.sunLight.shadow.mapSize.height = 256
         this.sunLight.shadow.camera.near = 0.5
         this.sunLight.shadow.camera.far = 50
         this.sunLight.shadow.camera.fov = 50

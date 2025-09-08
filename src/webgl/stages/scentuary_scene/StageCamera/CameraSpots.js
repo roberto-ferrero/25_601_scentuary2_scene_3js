@@ -29,6 +29,7 @@ class CameraSpots{
                         camera_rotation: child.rotation,
                         camera_fov: child.fov,
                         target_position: new THREE.Vector3(),
+                        camera_offset: new THREE.Vector2(0,0),
                     }
                     this.SPOTS.nuevoItem(spotId, spot)
                     //--
@@ -79,6 +80,28 @@ class CameraSpots{
                 }
             }
         })
+        //--------------------------
+        // ADDING EXTRA PARAMS:
+        const spot0 = this.SPOTS.getItem("spot0")
+        spot0.camera_offset.set(0, 0)
+        const spot1 = this.SPOTS.getItem("spot1")
+        spot1.camera_offset.set(0.2, 0)
+        const spot2 = this.SPOTS.getItem("spot2")
+        spot2.camera_offset.set(0.2, 0)
+        const spot3 = this.SPOTS.getItem("spot3")
+        spot3.camera_offset.set(0.2, 0)
+        const spot4 = this.SPOTS.getItem("spot4")
+        spot4.camera_offset.set(0.2, 0)
+        const spot5 = this.SPOTS.getItem("spot5")
+        spot5.camera_offset.set(0.2, 0) 
+        const spot6 = this.SPOTS.getItem("spot6")
+        spot6.camera_offset.set(0.2, 0) 
+        const spot7 = this.SPOTS.getItem("spot7")
+        spot7.camera_offset.set(0.2, 0) 
+        const spot8 = this.SPOTS.getItem("spot8")
+        spot8.camera_offset.set(0.2, 0)
+        //--------------------------
+
         console.log("this.SPOTS: ", this.SPOTS);
     }
     get_spot(spotId){

@@ -15,7 +15,7 @@ class Lights{
         this.scenario = obj.scenario
         this.parent3D = obj.parent3D
         //-----------------------------
-        const intensity_mod = 0.2
+        const intensity_mod = 0.0
         this.PRESETS = {
             cenitalA: {
                 color: 0xFDC274,
@@ -31,20 +31,38 @@ class Lights{
             },
             fillA2: {
                 color: 0xFDC274,
-                intensity: 29*intensity_mod,
+                intensity: 29*0,
                 distance: 100,
                 decay: 2
             },
             cenitalB: {
                 color: 0xFDC274,
-                intensity: 90*intensity_mod,
+                intensity: 90*0,
                 distance: 100,
                 decay: 2
             },
             fillB1: {
                 color: 0xFDC274,
-                intensity: 80*intensity_mod,
+                intensity: 80*0,
                 distance: 100,
+                decay: 2
+            },
+            lateral1: {
+                color: 0xFDC274,
+                intensity: 80*0.1,
+                distance: 100,
+                decay: 2
+            },
+            lateral2: {
+                color: 0xFDC274,
+                intensity: 80*0.1,
+                distance: 100,
+                decay: 2
+            },
+            archlight: {
+                color: 0xeac955,
+                intensity: 100*0.1,
+                distance: 3,
                 decay: 2
             },
         }
@@ -60,8 +78,16 @@ class Lights{
         })
         //-----------------------------
         // AMBIENT:
-        const dev_ambientLight = new THREE.AmbientLight(0xe5a860, 2.0); // Soft white light
+        // const dev_ambientLight = new THREE.AmbientLight(0xe5a860, 2.0); // Soft white light
+        const dev_ambientLight = new THREE.AmbientLight(0xffffff, 2); // Soft white light
         this.parent3D.add(dev_ambientLight);
+        //-----------------------------
+        // EXTRA POINT LIGHT:
+        // const extra_pointLight = new THREE.PointLight(0xffaa55, 5, 100, 2) // color, intensity, distance, decay
+        // extra_pointLight.position.copy(this.stage.spot.get_spot("archlight"))
+        // this.parent3D.add(extra_pointLight)
+        //-----------------------------
+        // IMPORTED LIGHTS:
         //-----------------------------
         this.stage.GLB_PROJECT.children.map((child)=>{
             // console.log("child.name: ", child.name, child);

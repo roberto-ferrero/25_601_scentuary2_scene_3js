@@ -22,16 +22,19 @@ class StageCamera{
         this.STATES.CURRENT ={
             camera_position: new THREE.Vector3(),
             camera_fov: 0,
+            camera_offset: new THREE.Vector2(0,0),
             target_position: new THREE.Vector3(),
         }
         this.STATES.INITIAL ={
             camera_position: new THREE.Vector3(),
             camera_fov: 0,
+            camera_offset: new THREE.Vector2(0,0),
             target_position: new THREE.Vector3(),
         }
         this.STATES.FINAL ={
             camera_position: new THREE.Vector3(),
             camera_fov: 0,
+            camera_offset: new THREE.Vector2(0,0),
             target_position: new THREE.Vector3(),
         }
         this.CAMERA_PROGRESS = 0
@@ -137,6 +140,8 @@ class StageCamera{
         const spot = this.SPOTS.get_spot(spotId)
         this.STATES.CURRENT.camera_position.copy(spot.camera_position)
         this.STATES.CURRENT.target_position.copy(spot.target_position)
+        this.STATES.CURRENT.camera_offset.copy(spot.camera_offset)
+        
         this.STATES.CURRENT.camera_fov = spot.camera_fov
         //--
         console.log("this.STATES: ", this.STATES);
@@ -147,10 +152,12 @@ class StageCamera{
         //--
         this.STATES.INITIAL.camera_position.copy(this.STATES.CURRENT.camera_position)
         this.STATES.INITIAL.target_position.copy(this.STATES.CURRENT.target_position)
+        this.STATES.INITIAL.camera_offset.copy(this.STATES.CURRENT.camera_offset)
         this.STATES.INITIAL.camera_fov = this.camera.fov
         //--
         this.STATES.FINAL.camera_position.copy(spot.camera_position)
         this.STATES.FINAL.target_position.copy(spot.target_position)
+        this.STATES.FINAL.camera_offset.copy(spot.camera_offset)
         this.STATES.FINAL.camera_fov = spot.camera_fov
         //--
         this.cameraAnim?.kill()
@@ -185,6 +192,7 @@ class StageCamera{
             this.STATES.CURRENT.camera_position.lerpVectors(this.STATES.INITIAL.camera_position, this.STATES.FINAL.camera_position, this.CAMERA_PROGRESS) 
             this.STATES.CURRENT.target_position.lerpVectors(this.STATES.INITIAL.target_position, this.STATES.FINAL.target_position, this.CAMERA_PROGRESS)
             this.STATES.CURRENT.camera_fov = THREE.MathUtils.lerp(this.STATES.INITIAL.camera_fov, this.STATES.FINAL.camera_fov, this.CAMERA_PROGRESS)
+            this.STATES.CURRENT.camera_offset.lerpVectors(this.STATES.INITIAL.camera_offset, this.STATES.FINAL.camera_offset, this.CAMERA_PROGRESS)
         }
         const PANNED_POSITION = this._update_pan(this.STATES.CURRENT.camera_position)
         this.holder.position.copy(PANNED_POSITION)
@@ -226,6 +234,9 @@ class StageCamera{
         const yscale = dimensions.height/this.app.size.REF.height
         // console.log("xscale: ", xscale, " yscale: ", yscale);
         this.lensFlare.cont3D.scale.set(xscale, yscale, 1)
+        //----------
+        this.lensFlare.cont3D.position.x = -this.STATES.CURRENT.camera_offset.x*dimensions.width
+        this.lensFlare.cont3D.position.y = this.STATES.CURRENT.camera_offset.y*dimensions.height
     }
     _update_lensFlare(){
         // const distance = 1;
@@ -384,6 +395,18 @@ class StageCamera{
         ////console.log("this.camera.rotation: ", this.camera.rotation);
         this.camera.lookAt(this.target.position)
         this.camera.aspect = (this.app.size.CURRENT.width)/this.app.size.CURRENT.height
+        //--
+        const offset_x = this.app.size.CURRENT.width*this.STATES.CURRENT.camera_offset.x
+        const offset_y = this.app.size.CURRENT.height*this.STATES.CURRENT.camera_offset.y
+        this.camera.setViewOffset(
+            this.app.size.CURRENT.width,
+            this.app.size.CURRENT.height,
+            offset_x,
+            offset_y,
+            this.app.size.CURRENT.width,
+            this.app.size.CURRENT.height,
+        )
+        //--
         this.camera.updateProjectionMatrix();
         if(this.camera_helper) this.camera_helper.update()
     }

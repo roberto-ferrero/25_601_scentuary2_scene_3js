@@ -29,7 +29,7 @@ class Pools{
 
         //---
         //const seaGeometry = new THREE.PlaneGeometry(100, 400, 10, 100) // Replace size if needed
-       const seaGeometry = new THREE.PlaneGeometry(5, 1, 1, 1) // Replace size if needed
+       const seaGeometry = new THREE.PlaneGeometry(5, 6, 1, 1) // Replace size if needed
        
         const waterNormals = this.stage.loader.get_texture("waternormals");
         waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
@@ -42,52 +42,52 @@ class Pools{
 
         this.pool1_mesh = new Water(seaGeometry, {
             // color: 0x001e0f,
-            // scale: 4,
+            scale: 0.5,
             // flowDirection: new THREE.Vector2(1, 1),
             // textureWidth: 1024,
             // textureHeight: 1024
             textureWidth: 128,
             textureHeight: 128,
-            flowDirection: new THREE.Vector2(0.1, 0.0),
+            flowDirection: new THREE.Vector2(0.2, 0.0),
             waterNormals: waterNormals,
             normalMap0: normalMap0,
             normalMap1: normalMap1,
             sunDirection: this.sunPosition,
             sunColor: 0xffffff, //this.sunColor,
-            color: 0xb5cad4,
-            distortionScale: 1.5,
+            color: 0xe4d3c3,
+            distortionScale: 3,
             fog: this.app.scene.fog !== undefined
         })
         this.pool1_mesh.rotation.x = -Math.PI / 2
         this.pool1_mesh.rotation.z = Math.PI
-        this.pool1_mesh.position.set(-0.7-4, -0.05, -2.5)
+        this.pool1_mesh.position.set(-0.7-4, -0.07, 0)
         // this.mesh.rotation.z = -Math.PI / 2
         this.parent3D.add(this.pool1_mesh)
         //--
-        this.pool2_mesh = new Water(seaGeometry, {
-            // color: 0x001e0f,
-            // scale: 4,
-            // flowDirection: new THREE.Vector2(1, 1),
-            // textureWidth: 1024,
-            // textureHeight: 1024
-            textureWidth: 128,
-            textureHeight: 128,
-            flowDirection: new THREE.Vector2(0.1, 0),
-            waterNormals: waterNormals,
-            normalMap0: normalMap0,
-            normalMap1: normalMap1,
-            sunDirection: this.sunPosition,
-            sunColor: 0xffffff, //this.sunColor,
-            // color: 0xffefd8, //0xffe3b9,
-            color: 0xb5cad4, //0xffe3b9,
-            distortionScale: 1.5,
-            fog: this.app.scene.fog !== undefined
-        })
-        this.pool2_mesh.rotation.x = -Math.PI / 2
-        this.pool2_mesh.rotation.z = Math.PI
-        this.pool2_mesh.position.set(-0.7-4, -0.05, 2.5)
-        // this.mesh.rotation.z = -Math.PI / 2
-        this.parent3D.add(this.pool2_mesh)
+        // this.pool2_mesh = new Water(seaGeometry, {
+        //     // color: 0x001e0f,
+        //     scale: 0.5,
+        //     // flowDirection: new THREE.Vector2(1, 1),
+        //     // textureWidth: 1024,
+        //     // textureHeight: 1024
+        //     textureWidth: 128,
+        //     textureHeight: 128,
+        //     flowDirection: new THREE.Vector2(-0.2, 0),
+        //     waterNormals: waterNormals,
+        //     normalMap0: normalMap0,
+        //     normalMap1: normalMap1,
+        //     sunDirection: this.sunPosition,
+        //     sunColor: 0xffffff, //this.sunColor,
+        //     // color: 0xffefd8, //0xffe3b9,
+        //     color: 0xe4d3c3, //0xffe3b9,
+        //     distortionScale: 3,
+        //     fog: this.app.scene.fog !== undefined
+        // })
+        // this.pool2_mesh.rotation.x = -Math.PI / 2
+        // this.pool2_mesh.rotation.z = Math.PI
+        // this.pool2_mesh.position.set(-0.7-4, -0.05, 4.5)
+        // // this.mesh.rotation.z = -Math.PI / 2
+        // this.parent3D.add(this.pool2_mesh)
 
 
     }
