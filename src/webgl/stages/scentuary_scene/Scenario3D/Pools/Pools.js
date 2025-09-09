@@ -14,7 +14,8 @@ class Pools{
         this.sunColor = obj.sunColor
         this.parent3D = obj.parent3D
         //-----------------------------
-
+        this.cont3D = new THREE.Object3D()
+        this.parent3D.add(this.cont3D)
        
         //-----------------------------
 
@@ -52,17 +53,24 @@ class Pools{
             waterNormals: waterNormals,
             normalMap0: normalMap0,
             normalMap1: normalMap1,
-            sunDirection: this.sunPosition,
+            // sunDirection: this.sunPosition,
+            sunDirection: new THREE.Vector3(-1,1,0),
             sunColor: 0xffffff, //this.sunColor,
-            color: 0xe4d3c3,
+            reflectivity : 0.1,
+            // color: 0xe4d3c3,
+            color: new THREE.Color('rgba(228, 211, 195, 1)'),
             distortionScale: 3,
             fog: this.app.scene.fog !== undefined
         })
         this.pool1_mesh.rotation.x = -Math.PI / 2
         this.pool1_mesh.rotation.z = Math.PI
         this.pool1_mesh.position.set(-0.7-4, -0.07, 0)
+
+        console.log("this.pool1_mesh.material: ", this.pool1_mesh.material  );
+        // this.pool1_mesh.material.transparent = true;
+        // this.pool1_mesh.material.opacity = 0.0;
         // this.mesh.rotation.z = -Math.PI / 2
-        this.parent3D.add(this.pool1_mesh)
+        this.cont3D.add(this.pool1_mesh)
         //--
         // this.pool2_mesh = new Water(seaGeometry, {
         //     // color: 0x001e0f,

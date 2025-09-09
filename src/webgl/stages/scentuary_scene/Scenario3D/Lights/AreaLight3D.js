@@ -15,7 +15,7 @@ class AreaLight3D{
         this.lightData = obj.lightData
         //-----------------------------
         RectAreaLightUniformsLib.init();
-        this.areaLight = new THREE.RectAreaLight(this.lightData.color, this.lightData.intensity, 1, 1) // color, intensity, distance, decay
+        this.areaLight = new THREE.RectAreaLight(this.lightData.color, this.lightData.intensity, this.lightData.width, this.lightData.height) // color, intensity, distance, decay
         //-----------------------------
         this.mesh = this.stage.get_mesh_from_GLB_PROJECT(this.itemId)
         // console.log("this.mesh",this.mesh);

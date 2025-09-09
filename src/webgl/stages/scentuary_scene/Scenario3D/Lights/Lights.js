@@ -47,18 +47,58 @@ class Lights{
                 distance: 100,
                 decay: 2
             },
+
+            // AREA LIHTS:
             lateral1: {
-                color: 0xFDC274,
-                intensity: 80*0.1,
+                color: 0xd5b99f,
+                intensity: 6*0,
                 distance: 100,
-                decay: 2
+                decay: 2,
+                width: 1,
+                height: 5
             },
             lateral2: {
-                color: 0xFDC274,
-                intensity: 80*0.1,
+                color: 0xd5b99f,
+                intensity: 6*0,
                 distance: 100,
-                decay: 2
+                decay: 2,
+                width: 1,
+                height: 5
             },
+            benchLight1: {
+                color: 0xd5b99f,
+                intensity: 5,
+                distance: 100,
+                decay: 2,
+                width: 1,
+                height: 1
+            },
+            benchLight2: {
+                color: 0xd5b99f,
+                intensity: 5,
+                distance: 100,
+                decay: 2,
+                width: 1,
+                height: 1
+            },
+            poolLight1: {
+                color: 0xd5b99f,
+                intensity: 5,
+                distance: 100,
+                decay: 4,
+                width: 5,
+                height: 1
+            },
+            poolLight2: {
+                color: 0xd5b99f,
+                intensity: 5,
+                distance: 100,
+                decay: 4,
+                width: 5,
+                height: 1
+            },
+
+
             archlight: {
                 color: 0xeac955,
                 intensity: 100*0.1,

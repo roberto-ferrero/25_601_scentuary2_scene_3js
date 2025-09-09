@@ -42,7 +42,7 @@ class FloorLogo{
             // lightMap: this.texture_bump,
             // lightMapIntensity: 0.5,
             transparent: true,
-            opacity: 2.0,
+            opacity: 3.0,
             side: THREE.DoubleSide
           });
         mesh.material = material
