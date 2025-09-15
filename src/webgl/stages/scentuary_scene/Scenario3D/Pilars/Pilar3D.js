@@ -13,6 +13,8 @@ class Pilar3D{
         this.itemId = obj.itemId
         this.itemIndex = obj.itemIndex // Position of the item in the 3D space
         //-----------------------------
+        this.STATE = "NORMAL" // NORMAL, UNSELECTED, SELECTED
+        this.TRANSITION_PROGRESS = 0
         this.SCENT_ID = this.stage.SCENT_ARRAY[this.itemIndex]
         //-----------------------------
         this.mesh = this.stage.get_mesh_from_GLB_PROJECT(this.itemId)
@@ -44,18 +46,19 @@ class Pilar3D{
         const marbleMaterial = new THREE.MeshStandardMaterial({
             map: this.texture, // Use the loaded texture
             aoMap: this.texture_ao,
-            aoMapIntensity: 0.5,
+            aoMapIntensity: 1,
             lightMap: this.texture_bump,
-            lightMapIntensity: 2.5,
+            lightMapIntensity: 1.3,
             // color: this.scenario.BESE_MARBEL_COLOR, // Ivory base color
-            roughness: 0.45,   // Moderate roughness for a soft shine
+            roughness: 0.5,   // Moderate roughness for a soft shine
             metalness: 0.0,   // Non-metallic
             
             bumpMap: this.texture_bump,
             bumpScale: 5, // Adjust the bump scale as needed
-            // lightMap: this.texture_bump,
-            // lightMapIntensity: 0.5,
-            // side: THREE.DoubleSide
+   
+            emissiveMap: this.texture_bump,
+            emissive: new THREE.Color(0xd5b99f),
+            emissiveIntensity: 0.5,
         });
         this.mesh.material = marbleMaterial
         this.mesh.castShadow = true;
@@ -76,6 +79,21 @@ class Pilar3D{
             index: this.itemId.split("pilar")[1],
             SCENT_ID: this.SCENT_ID,
         })
+        //-----------------------------
+        this.app.emitter.on("onScentSelected", (data)=>{
+            console.log((data.SCENT_ID+"/"+this.SCENT_ID));
+            if(data.SCENT_ID == this.SCENT_ID){
+                console.log("*1");
+                this.STATE = "SELECTED"
+            }else if (data.SCENT_ID == null){
+                console.log("*2");
+                this.STATE = "NORMAL"
+            }else{
+                console.log("*3");
+                this.STATE = "UNSELECTED"
+            };
+            //this._eval_state()
+        })
     }
     //----------------------------------------------
     // PUBLIC:
@@ -85,7 +103,19 @@ class Pilar3D{
 
     //----------------------------------------------
     // PRIVATE:
-
+    _eval_state(){
+        console.log(this.SCENT_ID+": "+this.STATE);
+        if(this.STATE == "NORMAL"){
+            this.mesh.material.lightMapIntensity = 1.3
+            this.mesh.material.emissiveIntensity = 0.5
+        }else if(this.STATE == "UNSELECTED"){
+            this.mesh.material.lightMapIntensity = 1
+            this.mesh.material.emissiveIntensity = 0.3
+        }else if(this.STATE == "SELECTED"){
+            this.mesh.material.lightMapIntensity = 1.5
+            this.mesh.material.emissiveIntensity = 0.8
+        }
+    }
     //----------------------------------------------
     // AUX:
 

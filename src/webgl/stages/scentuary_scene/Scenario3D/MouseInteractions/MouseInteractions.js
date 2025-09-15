@@ -1,4 +1,4 @@
-//import gsap from "gsap"
+import gsap from "gsap"
 import * as THREE from 'three'
 
 import Hitbox3D from "./Hitbox3D"
@@ -19,6 +19,8 @@ class MouseInteractions{
         //-----------------------------
         this.CURRENT_ROLLOVER_SCENT_ID = null
         this.CURRENT_SELECTED_SCENT_ID = null
+        //-----------------------------
+        this.TRANSITION_PROGRESS = 0
         //-----------------------------
         this.ITEMS_REF = []
         this.HITBOXES = []
@@ -63,6 +65,14 @@ class MouseInteractions{
         this.app.emitter.on("onScentSelected", (data)=>{
             console.log("onScentSelected", data);
             this.CURRENT_SELECTED_SCENT_ID = data.SCENT_ID;
+            gsap.to(this, {
+                TRANSITION_PROGRESS: 1,
+                duration: 1,
+                ease: "power2.inOut",
+                onComplete:()=>{
+                    this.TRANSITION_PROGRESS = 0
+                }
+            })
         })
     }
     //----------------------------------------------
